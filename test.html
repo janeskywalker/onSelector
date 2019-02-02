@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>onSeletor</title>
+
+
+
+    <style>
+            * {
+                background: #fff;
+            }
+            div {
+                border: 1px solid #000;
+                padding: 20px;
+            }
+        </style>
+
+
+
+</head>
+<body>
+
+    <div id="outter-div">
+            <div id="inner-div">Click here</div>
+    </div>
+
+    <div id="outter-div-2">
+        <div id="inner-div-2">Click here 2</div>
+    </div>
+
+    <div>
+        Empty div
+    </div>
+
+    <input id="text-input" />
+            
+    <script src="index.js"></script>
+    <script>
+        onSelector("click", "#outter-div", (el) => {
+            console.log("outter div clicked: ", el)
+        })
+
+        onSelector("click", "#outter-div-2", (el) => {
+            console.log("outter div 2 clicked: ", el)
+        })
+
+        onSelector("click", "div", (el) => {
+            console.log("div clicked: ", el)
+        })
+
+        onSelector("input", "#text-input", (el) => {
+            console.log("text input: ", el)
+        })
+    </script>
+    
+</body>
+</html>
