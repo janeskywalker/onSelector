@@ -9,35 +9,32 @@ const handlers = new Map()
 // has
 // delete
 
-function onSelector(event, selector, cb) {
-
-    // Only executed the first time the function is called for an event
-    if(!handlers.has(event)) {
-        console.log('event: ', event)
-        handlers.set(event, [])
-
-        document.addEventListener(event, (e) => {
-
-            handlers.get(event).forEach(fn => {
-                console.log("inside selector: ", selector)
-                // if (recursiveMatch(e.target, selector)) {
-                    fn(e)
-                // }
-            });
-
-            // if (recursiveMatch(e.target, selector)) {
-            //     cb(e)
-            // } 
-        })
-    }
-    
-    // Executed everytime the function is called
+function addHandler(event, selector, cb) {
     handlers.get(event).push((e) => {
-        console.log("outside selector: ", selector)
         if (recursiveMatch(e.target, selector)) {
             cb(e)
         }
     })
+}
+
+function attachEventToDocument(event) {
+    document.addEventListener(event, (e) => {
+        handlers.get(event).forEach(fn => {
+            fn(e)
+        })
+    })
+}
+
+function onSelector(event, selector, cb) {
+
+    // Only executed the first time the function is called for an event
+    if(!handlers.has(event)) {
+        handlers.set(event, [])
+        attachEventToDocument(event)
+    }
+    
+    // Executed everytime the function is called
+    addHandler(event, selector, cb)
 }
 
 // element,string -> boolean 
