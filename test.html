@@ -39,10 +39,10 @@
             
 
 
+    <script type = "module">
 
-    <script src="index.js"></script>
+        import { onSelector } from './src/index.js'
 
-    <script>
         onSelector("click", "#outter-div", (el) => {
             console.log("outter div clicked: ", el)
         })
@@ -58,10 +58,6 @@
         onSelector("input", "#text-input", (el) => {
             console.log("text input: ", el)
         })
-
-
-        
-
 
     </script>
     
