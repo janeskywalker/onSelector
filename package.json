@@ -1,6 +1,6 @@
 {
   "name": "onselector",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "on",
   "main": "dist/onselector.js",
   "files": [
