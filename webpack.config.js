@@ -7,6 +7,7 @@ module.exports = {
         // __dirname is a variable that holds path to this file.
         path: path.resolve(__dirname, 'dist'),
         filename: 'onselector.js',
-        library: 'onselector'
+        library: 'onselector',
+        libraryTarget: 'umd',
     }
 }
