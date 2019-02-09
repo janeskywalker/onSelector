@@ -2,7 +2,7 @@
   "name": "onselector",
   "version": "1.0.1",
   "description": "on",
-  "main": "dist/bundle.js",
+  "main": "dist/onselctor.js",
   "files": [
     "dist"
   ],

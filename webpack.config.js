@@ -6,6 +6,7 @@ module.exports = {
     output: {
         // __dirname is a variable that holds path to this file.
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: 'onselector.js',
+        library: 'onselector'
     }
 }
