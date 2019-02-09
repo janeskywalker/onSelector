@@ -2,7 +2,7 @@
   "name": "onselector",
   "version": "1.0.2",
   "description": "on",
-  "main": "dist/onselctor.js",
+  "main": "dist/onselector.js",
   "files": [
     "dist"
   ],
