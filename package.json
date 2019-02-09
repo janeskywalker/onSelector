@@ -2,8 +2,12 @@
   "name": "onselector",
   "version": "1.0.0",
   "description": "on",
-  "main": "index.js",
+  "main": "dist/bundle.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "prepack": "npm run build",
     "clean": "rimraf dist",
     "clean:all": "npm run clean -- node_modules",
     "prebuild": "npm run clean && npm run format",
